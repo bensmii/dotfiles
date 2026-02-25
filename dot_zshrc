@@ -2,7 +2,7 @@
 # This is typically added by Homebrew itself
 # and should be loaded first to ensure all Homebrew-installed commands are available.
 # It should look something like this:
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Starship Prompt - should be initialized early
 eval "$(starship init zsh)"
@@ -30,6 +30,10 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/$USER/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
 # End of Docker CLI completions
+
+# zsh-autsuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-autocomplete
+source $HOMEBREW_PREFIX/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
